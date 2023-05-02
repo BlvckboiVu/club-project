@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+    --primary-color: #d3e90e;
+    --secondary-color: rgba(29, 188, 199, 0.5);
+    --dark: #015b8f;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+    line-height: 1.6;
+}  
+
+img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+
+input {
+    background-color: var(--secondary-color);
+    border: none;
+    color: #000000;
+    border-radius: 15px;
+    padding: 5px 35px;
+    margin: 8px auto;
+}
+
+.btn {
+    cursor: pointer;
+    background: var(--primary-color);
+    box-shadow: 0 3px 10px rgba(0, 0 ,0, 0.2);
+    color: #000000;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.btn:hover {
+    transform: scale(0.98);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0 ,0, 0.2);
+    padding: 20px;
+    margin: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/*Navbar*/
+.navbar {
+    background-color: var(--primary-color);
+    color: black;
+    height: 70px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar img {
+    height: 70px;
+    width: 70px;
+    border-radius: 0;
+}
+
+.navbar a {
+    color: black;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px #333 solid;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+/*Delta*/
+.delta {
+    height: auto;
+    padding: 2rem 0;
+    background-color: var(--primary-color);
+}
+
+.delta .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+
+}
+
+#Sidebar {height: 100%; grid-column: 1 /span 3; grid-row: 1 /span 4;}
+#card1 {grid-column: 4 /span 5; grid-row: 1;}
+#card2 {grid-column: 4 /span 5; grid-row: 2;}
+#card3 {grid-column: 4 /span 5; grid-row: 3;}
+#card4 {grid-column: 4 /span 5; grid-row: 4;}
+
+.delta .card {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+    padding: 5px 10px;
+    transition: transform 0.2s ease-in;
+}
+
+.delta .card p {
+    font-size: 0.9rem;
+    margin: 8px;
+    text-align: left;
+}
+
+.delta .card img {
+    height: 105px;
+    width: 105px;
+    border-radius: 50px;
+    margin: auto 0;
+    justify-self: flex-start;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    padding: 3rem 40px;
+    margin: auto ;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+footer .social a {
+    margin: 0 10px;
+}
+
+/* Tablets and under */
+@media only screen and (max-width: 768px) {
+    .delta .grid{
+        display: block;
+    }
+
+    .delta .card {
+        margin: 10px auto;
+    }
+    
+}
+
+
+/* Mobile */
+@media(max-width: 666px) {
+    .navbar {
+        height: 11rem;
+        background-color: var(--dark);
+        padding-bottom: 15px;
+    }
+
+    .navbar .flex {
+        flex-direction:column;
+        
+    }
+
+    .navbar ul {
+        padding: 10px;
+        background-color: rgba(0,0,0,0.1);
+    }
+
+    input, .btn {
+        background-color: var(--secondary-color);
+        border: none;
+        border-radius: 15px;
+        margin: 0;
+        box-shadow: 0 3px 10px rgba(0, 0 ,0, 0.2); ;
+    }
+
+    footer .container {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+    }
+}
+
+/* iPhone */
+@media (max-width: 393px) {
+    #Searchbox {
+        display: flex;
+        justify-content: space-between;
+        scale: 0.8;
+        animation: decrease 1s ease-in-out;
+    }
+
+    .delta .card {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    footer .container {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+    }
+}
+
+@keyframes decrease {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+    
+}
